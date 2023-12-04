@@ -5,6 +5,7 @@ const router = express.Router();
 
 
 router.get("/", toyCntrollers.getToys)
+router.get("/getAll", toyCntrollers.getAllToys)
 router.get("/search", authController.authNoPermistion, toyCntrollers.getToysSearch)
 router.get("/category/:category", authController.authNoPermistion, toyCntrollers.getToyByCategory)
 router.get("/single/:id", authController.authNoPermistion, toyCntrollers.getToyById)

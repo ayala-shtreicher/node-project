@@ -39,6 +39,17 @@ exports.getToys = asyncWrap(async (req, res, next) => {
         .select("-__v");
     res.send(tasks);
 });
+exports.getAllToys = asyncWrap(async (req, res, next) => {
+    const query = req.query;
+    const perPage = 10;
+    const skip = (query.page - 1) * perPage;
+    const tasks = await Toy.find()
+        .populate('ownerId')
+        .skip(skip)
+        .limit(perPage)
+        .select("-__v");
+    res.send(tasks);
+});
 exports.getToysSearch = asyncWrap(async (req, res, next) => {
     const query = req.query;
     const perPage = 10;
