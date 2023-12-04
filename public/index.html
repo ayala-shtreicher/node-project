@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="bg-info-subtle">
+    <h2 class="text-center">Toy</h2>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Get Toys - GET
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    ✌️ Get 10 toys by page number <a href="/api/v1/toys?page=1">toys?page=1</a>
+                    <br>
+                    ✌️ Get toys by search with name or info <a
+                        href="/api/v1/toys/search?s=car">toys/search?s=car</a> <br>
+                    ✌️ Get toys by category <a
+                        href="/api/v1/toys/category/car">toys/category/car</a> <br>
+                    ✌️ Get toys by id <a
+                        href="/api/v1/toys/single/656c79076851d0316972d0f9">toys/single/</a> <br>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Add Toy - POST
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    ✌️ add toy (only for register user - must send user's auth-token through headers) /toys <br>
+                    body: <br>
+                    {
+                    "name":"sicun", (required) <br>
+                    "info":"fun", (required) <br>
+                    "category":"box game", (required) <br>
+                    "img_url":"https://publicdomainvectors.org/tn_img/3D-02.webp", <br>
+                    "price":"80", (required) <br>
+                    "date_created":"2023-05-04" <br>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Edit Toy - PATCH
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    ✌️ edit toy (only for register user - must send user's auth-token through headers) /toys/id <br>
+                    body: <br>
+                    {
+                    "name":"sicun", <br>
+                    "info":"fun", <br>
+                    "category":"box game", <br>
+                    "img_url":"https://publicdomainvectors.org/tn_img/3D-02.webp", <br>
+                    "price":"80", <br>
+                    "date_created":"2023-05-04" <br>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Delete Toy - DELETE
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    ✌️ delete toy (only for register user - must send user's auth-token through headers) /toys/id <br>
+                </div>
+            </div>
+        </div>
+        <h2 class="text-center">User</h2>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Get user - GET
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    ✌️ Get user by id <a href="/api/v1/users/656cb0e2f4c8d6bcaa9e4d0d">users/id</a>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Register - POST
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    ✌️ Add a user (POST)
+                    body: <br>
+                    {
+                    "name":"moshe", (required) <br>
+                    "email":"moshe@g.com", (required) <br>
+                    "password":"456", (required) <br>
+                    "passwordConfirm":"456", (required) <br>
+                    "date_created":"2023-05-04" (required) <br>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    Log in - POST
+                </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    ✌️ login - POST
+                    body: <br>
+                    {
+                    "email":"moshe@g.com", (required) <br>
+                    "password":"456", (required) <br>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+</html>
