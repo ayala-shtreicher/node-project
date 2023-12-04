@@ -17,10 +17,6 @@ app.use("/api/v1/users",userRoutes)
 
 
 
-app.get("*",()=>{
-
-});
-
 app.all("*",(req,res,next)=>{
     next(new AppError(404,"The requested resource not exist on this server"));
 });
