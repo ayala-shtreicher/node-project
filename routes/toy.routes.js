@@ -4,7 +4,7 @@ const authController = require("../controllers/authCntroller");
 const router = express.Router();
 
 
-router.get("/", authController.authNoPermistion, toyCntrollers.getToys)
+router.get("/", toyCntrollers.getToys)
 router.get("/search", authController.authNoPermistion, toyCntrollers.getToysSearch)
 router.get("/category/:category", authController.authNoPermistion, toyCntrollers.getToyByCategory)
 router.get("/single/:id", authController.authNoPermistion, toyCntrollers.getToyById)
